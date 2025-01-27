@@ -1,4 +1,5 @@
-name: deploy-development-wf
+
+name: deploy-development
 on: 
   push:
     branches:
@@ -10,7 +11,7 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v4
       - name: Build Website
-        run: npx parcel build "./src/index.html" --dist-dir "./dev" --public-url "./"
+        run: npx parcel build "./src/home.html" --dist-dir "./dev" --public-url "./"
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
